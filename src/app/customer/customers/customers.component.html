@@ -1,0 +1,8 @@
+<app-search (search)="search($event)"></app-search>
+<md-spinner *ngIf="loading$ | async">load</md-spinner>
+<button md-icon-button (click)="add()"><md-icon>add</md-icon></button>
+<md-list>
+  <md-list-item *ngFor="let customer of customers$ | async">
+    {{customer | json}}
+  </md-list-item>
+</md-list>
